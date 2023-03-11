@@ -1,20 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
 
 public class RobotController : MonoBehaviour
 {
-    [System.Serializable]
-    public struct Joint
-    {
-        public string inputAxis;
-        public GameObject robotPart;
-    }
-    public Joint[] joints;
+    [SerializeField] private Joint[] joints;
 
-
-    // CONTROL
+    public Joint[] GetJoints() => joints;
 
     public void StopAllJointRotations()
     {
@@ -32,14 +22,9 @@ public class RobotController : MonoBehaviour
         UpdateRotationState(direction, joint.robotPart);
     }
 
-    // HELPERS
-
-    static void UpdateRotationState(RotationDirection direction, GameObject robotPart)
+    private static void UpdateRotationState(RotationDirection direction, GameObject robotPart)
     {
         ArticulationJointController jointController = robotPart.GetComponent<ArticulationJointController>();
         jointController.rotationState = direction;
     }
-
-
-
 }
