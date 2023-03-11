@@ -9,10 +9,6 @@ public class MyJointController : MonoBehaviour
     private float _speed;
     private ArticulationBody _joint;
 
-    public void SetRotationDirection(RotationDirection newDirection) => _direction = newDirection;
-
-    public ControlType GetControlType() => _controlType;
-
     public void SetControlType(ControlType controlType) => _controlType = controlType;
 
     public ArticulationBody GetJoint() => _joint;
@@ -57,7 +53,6 @@ public class MyJointController : MonoBehaviour
                         currentDrive.target += newTargetDelta;
                     }
                 }
-
                 else if (_joint.jointType == ArticulationJointType.PrismaticJoint)
                 {
                     if (_joint.linearLockX == ArticulationDofLock.LimitedMotion)
