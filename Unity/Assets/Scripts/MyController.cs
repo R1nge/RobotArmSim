@@ -3,16 +3,17 @@ using UnityEngine;
 
 public class MyController : MonoBehaviour
 {
+    [SerializeField] private ControlType control = ControlType.PositionControl;
+    [SerializeField] private float stiffness;
+    [SerializeField] private float damping;
+    [SerializeField] private float forceLimit;
+    [SerializeField] private float speed = 5f; // Units: degree/s
     private ArticulationBody[] _articulationChain;
     private int _previousIndex;
     private string _selectedJoint;
     private int _selectedIndex;
 
-    public ControlType control = ControlType.PositionControl;
-    public float stiffness;
-    public float damping;
-    public float forceLimit;
-    public float speed = 5f; // Units: degree/s
+    public float GetSpeed() => speed;
 
     private void Start()
     {
@@ -31,7 +32,7 @@ public class MyController : MonoBehaviour
         }
     }
 
-    void SetSelectedJointIndex(int index)
+    private void SetSelectedJointIndex(int index)
     {
         if (_articulationChain.Length > 0)
         {
@@ -39,7 +40,7 @@ public class MyController : MonoBehaviour
         }
     }
 
-    void Update()
+    private void Update()
     {
         SetSelectedJointIndex(_selectedIndex); // to make sure it is in the valid range
         UpdateDirection(_selectedIndex);
@@ -57,17 +58,29 @@ public class MyController : MonoBehaviour
             return;
         }
 
-        MyJointController current = _articulationChain[jointIndex].GetComponent<MyJointController>();
-        if (_previousIndex != jointIndex)
+        if (_articulationChain[jointIndex].TryGetComponent(out MyJointController current))
         {
-            MyJointController previous = _articulationChain[_previousIndex].GetComponent<MyJointController>();
-            previous.SetRotationDirection(RotationDirection.None);
-            _previousIndex = jointIndex;
-        }
+            if (_previousIndex != jointIndex)
+            {
+                if (_articulationChain[_previousIndex].TryGetComponent(out MyJointController previous))
+                {
+                    previous.SetRotationDirection(RotationDirection.None);
+                    _previousIndex = jointIndex;
+                }
+                else
+                {
+                    Debug.LogError("Previous joint is null", this);
+                }
+            }
 
-        if (current.GetControlType() != control)
+            if (current.GetControlType() != control)
+            {
+                UpdateControlType(current);
+            }
+        }
+        else
         {
-            UpdateControlType(current);
+            Debug.LogError("Current joint is null", this);
         }
     }
 

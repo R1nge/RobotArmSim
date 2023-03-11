@@ -23,14 +23,11 @@ public class MyJointController : MonoBehaviour
         _controller = GetComponentInParent<MyController>();
         _joint = GetComponent<ArticulationBody>();
         _controller.UpdateControlType(this);
-        _speed = _controller.speed;
+        _speed = _controller.GetSpeed();
     }
 
     private void FixedUpdate()
     {
-        _speed = _controller.speed;
-
-
         if (_joint.jointType != ArticulationJointType.FixedJoint)
         {
             if (_controlType == ControlType.PositionControl)
