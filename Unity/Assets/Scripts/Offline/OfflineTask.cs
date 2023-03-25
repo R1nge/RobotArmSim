@@ -2,23 +2,40 @@ using System;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Offline
 {
     public abstract class OfflineTask : MonoBehaviour
     {
-        [Header("Settings")] [SerializeField] private bool autoStart;
+        [Header("Settings")] 
+        [SerializeField] private bool autoStart;
         [SerializeField] private bool loopExecution;
 
-        [Header("References")] [SerializeField]
-        private MyController controller;
+        [Header("References")] 
+        [SerializeField] private MyController controller;
 
-        [Header("Status")] [SerializeField] private State state;
+        [Header("Status")] 
+        [SerializeField] private State state;
         [SerializeField] private List<Instruction> instructions;
 
-        [Header("Debug")] [SerializeField] private GizmoType gizmosSettings;
+        [Header("Debug")] 
+        [SerializeField] private GizmosSetting gizmosSettings;
         [SerializeField] private bool verbose;
         [SerializeField] private bool isValid;
+
+        private void Awake()
+        {
+            Init();
+        }
+
+        private void Start()
+        {
+            if (autoStart)
+            {
+                Execute();
+            }
+        }
 
         protected abstract void Program();
 
@@ -37,6 +54,22 @@ namespace Offline
             instruction.Execute();
         }
 
+        protected void Wait(float milliseconds)
+        {
+        }
+
+        protected void AttachTool()
+        {
+        }
+
+        protected void Action(UnityEvent unityEvent, bool value)
+        {
+            if (value)
+            {
+                unityEvent.Invoke();
+            }
+        }
+
         public void Compile()
         {
             //instructions.Add(instruction);
@@ -52,6 +85,11 @@ namespace Offline
         {
             print("Stop");
         }
+
+        private void Init()
+        {
+            Gizmos.color = gizmosSettings.color;
+        }
     }
 
     public enum State
@@ -61,63 +99,10 @@ namespace Offline
     }
 
     [Serializable]
-    public class Instruction
+    public struct GizmosSetting
     {
-        protected GameObject Frame;
-        protected float Speed;
-
-        public Instruction SetFrame(GameObject frame)
-        {
-            Frame = frame;
-            return this;
-        }
-
-        public Instruction SetSpeed(float speed)
-        {
-            Speed = speed;
-            return this;
-        }
-
-        public Instruction ExternalAxis(int index, int value, float speed)
-        {
-            return this;
-        }
-
-        public virtual void Execute()
-        {
-        }
-    }
-
-    [Serializable]
-    public class PTP : Instruction
-    {
-        private readonly Vector3 _position;
-
-
-        public PTP(Vector3 position)
-        {
-            _position = position;
-        }
-
-        public override void Execute()
-        {
-            Debug.Log($"PTP {_position}");
-        }
-    }
-
-    [Serializable]
-    public class LIN : Instruction
-    {
-        private readonly Vector3 _position;
-
-        public LIN(Vector3 position)
-        {
-            _position = position;
-        }
-
-        public override void Execute()
-        {
-            Debug.Log($"LIN {_position}");
-        }
+        public GizmoType type;
+        public Color color;
+        public float size;
     }
 }

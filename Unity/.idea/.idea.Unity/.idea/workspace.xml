@@ -2,16 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6ba8747-e860-4890-9bcb-1edd9bfd6982" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Offline/Editor.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Offline/Editor/OfflineTaskEditor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Offline/Editor/OfflineTaskEditor.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Offline/MoveTask.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Offline/MoveTask.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Offline/Instruction.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Offline/Instruction.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Offline/LIN.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Offline/LIN.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Offline/PTP.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Offline/PTP.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Offline/Tool.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Offline/Tool.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/NavyFloor.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/NavyFloor.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/URDF/niryo_one/Materials.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/URDF/niryo_one/Materials/Default.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/URDF/niryo_one/Materials/Default.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Offline/OfflineTask.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Offline/OfflineTask.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Unity.Robotics.PickAndPlace.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Unity.Robotics.PickAndPlace.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URDF/niryo_one/niryo_one_urdf/meshes/collada/arm_link.dae.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/URDF/niryo_one/niryo_one_urdf/meshes/collada/arm_link.dae.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URDF/niryo_one/niryo_one_urdf/meshes/collada/base_link.dae.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/URDF/niryo_one/niryo_one_urdf/meshes/collada/base_link.dae.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URDF/niryo_one/niryo_one_urdf/meshes/collada/elbow_link.dae.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/URDF/niryo_one/niryo_one_urdf/meshes/collada/elbow_link.dae.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URDF/niryo_one/niryo_one_urdf/meshes/collada/forearm_link.dae.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/URDF/niryo_one/niryo_one_urdf/meshes/collada/forearm_link.dae.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URDF/niryo_one/niryo_one_urdf/meshes/collada/hand_link.dae.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/URDF/niryo_one/niryo_one_urdf/meshes/collada/hand_link.dae.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URDF/niryo_one/niryo_one_urdf/meshes/collada/shoulder_link.dae.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/URDF/niryo_one/niryo_one_urdf/meshes/collada/shoulder_link.dae.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/URDF/niryo_one/niryo_one_urdf/meshes/collada/wrist_link.dae.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/URDF/niryo_one/niryo_one_urdf/meshes/collada/wrist_link.dae.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/boot.config" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,6 +40,10 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/1806137cd3404134a7aa0a603bee8ca31f200/7e/6b132d47/02000040pdb6.il" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e8a406da998549af9a2680936c7da25a159c00/46/ba9d2530/UnityEvent.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e8a406da998549af9a2680936c7da25a159c00/62/de4e4d55/UnityEventBase.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e8a406da998549af9a2680936c7da25a159c00/8b/78c2a6ec/ISerializationCallbackReceiver.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e8a406da998549af9a2680936c7da25a159c00/fe/839a0276/Component.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.robotics.urdf-importer@90f353e435/Runtime/Controller/Controller.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.robotics.urdf-importer@90f353e435/Runtime/Controller/JointControl.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.robotics.urdf-importer@90f353e435/Runtime/UrdfComponents/UrdfJoints/UrdfJointRevolute.cs" root0="SKIP_HIGHLIGHTING" />
@@ -54,7 +74,7 @@
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="D:\UnityEngines\2021.3.19f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="D:\UnityEngines\2022.2.11f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath D:\UnityProjects\RobotArmSim\Unity -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="D:\UnityProjects\RobotArmSim\Unity" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -91,7 +111,10 @@
       <option name="presentableId" value="Default" />
       <updated>1678548138898</updated>
       <workItem from="1678548151388" duration="6969000" />
-      <workItem from="1678601435562" duration="5680000" />
+      <workItem from="1678601435562" duration="13250000" />
+      <workItem from="1678782500134" duration="864000" />
+      <workItem from="1678971193378" duration="2295000" />
+      <workItem from="1678975622088" duration="208000" />
     </task>
     <task id="LOCAL-00001" summary="ref: robot controller">
       <created>1678552228710</created>
@@ -114,7 +137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678553707238</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="feat: offline tasks">
+      <created>1678609044492</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1678609044492</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -137,6 +167,7 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="ref: robot controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="ref: robot controller" />
+    <MESSAGE value="feat: offline tasks" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: offline tasks" />
   </component>
 </project>
